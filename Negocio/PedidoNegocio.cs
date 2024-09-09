@@ -407,6 +407,25 @@ namespace Negocio
             return lista;
         }
 
+        public void LimpiarMesas()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.LimpiarParametros();
+                datos.SetearConsulta("UPDATE Mesa SET Estado = 0");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al limpiar Mesas: " + ex.Message);
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
 
     }
 }

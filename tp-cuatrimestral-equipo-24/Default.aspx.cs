@@ -29,6 +29,8 @@ namespace tp_cuatrimestral_equipo_24
 
                 if (UsuGesti.Loguear(usuario))
                 {
+                    PedidoNegocio negoPedi = new PedidoNegocio();
+                    negoPedi.LimpiarMesas();
                     int Puesto = UsuGesti.BuscarPuesto(usuario);
                     // El ID de usuario ya debería estar asignado en el método Loguear
                     Session.Add("Puesto", Puesto);
