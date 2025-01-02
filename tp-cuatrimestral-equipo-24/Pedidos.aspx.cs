@@ -228,9 +228,23 @@ namespace tp_cuatrimestral_equipo_24
                     int idUsuario = usuario.Id;
 
                     // Usar el IdPedido de la sesión
-                    int idPedido = (int)Session["IdPedido"];
-                    var totalPedido = listaPedidos.Sum(p => p.ObtenerTotal());
 
+                    if (Session["IdPedido"] == null)
+                    {
+                        ErrorMessage.Text = "No se encontró un ID de pedido en la sesión.";
+                        return;
+                    }
+
+                    int idPedido = (int)Session["IdPedido"] != null ? (int)Session["IdPedido"]:0;
+
+                    if (idPedido == 0)
+                    {
+                        ErrorMessage.Text = "El pedido no está inicializado.";
+                        return;
+                    }
+
+                    var totalPedido = listaPedidos.Sum(p => p.ObtenerTotal());
+                    
                     // Agregar los ítems al pedido
                     foreach (var item in listaPedidos)
                     {
