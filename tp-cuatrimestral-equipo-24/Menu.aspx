@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Menú" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="tp_cuatrimestral_equipo_24.Menu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%--<link href="EstilosTarjetas.css" rel="stylesheet" />--%>
+    <link href="EstilosTarjetas.css" rel="stylesheet" />
     <link href="EstilosFiltrar.css" rel="stylesheet" />
     <style>
         body {
@@ -10,14 +10,14 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("https://previews.123rf.com/images/yupiramos/yupiramos1307/yupiramos130700939/20982775-restaurante-de-piel-sobre-fondo-de-color-rosa-ilustraci%C3%B3n-vectorial.jpg");
             background-size: cover;
-            background-color: #f5f0f0b6;  Color de fondo rojo claro 
-            color: #721c24;  Color del texto rojo oscuro 
-            min-height: 100vh;  Para que el cuerpo ocupe al menos toda la pantalla visible 
-            position: relative;  Para que el footer se posicione correctamente 
+            background-color: #f5f0f0b6;   
+            color: #721c24;  
+            min-height: 100vh;  
+            position: relative;   
         }
 
         #wrapper {
-            min-height: 100vh;  Para que el wrapper ocupe al menos toda la pantalla visible 
+            min-height: 100vh; 
             display: flex;
             flex-direction: column;
         }
