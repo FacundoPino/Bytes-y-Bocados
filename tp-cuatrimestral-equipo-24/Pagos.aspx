@@ -40,8 +40,7 @@
             </div>
         </div>
 
-
-        <asp:Button ID="btnPdf" runat="server" Text="Descargar" CssClass="recibo-button" Visible="false" OnClick="btnPdf_Click" />
+        <asp:Button ID="btnPdf" runat="server" Text="Descargar" CssClass="recibo-button" Visible="true" OnClick="btnPdf_Click" />
 
     </div>
 </asp:Content>
