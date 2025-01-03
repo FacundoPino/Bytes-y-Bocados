@@ -34,8 +34,6 @@
                 <p id="lblTipo" runat="server" visible="false">Tipo de Pago: <span id="txtTipo" runat="server"></span></p>
                 <p id="lblconsumicion" runat="server" visible="false">Consumición: <span id="txtConsumicion" runat="server"></span></p>
                 <p>***************************************</p>
-                <p>Total cost: <span id="totalCost"></span></p>
-                <p>***************************************</p>
                 <p>Note: <span id="note"></span>ESPERO QUE LE HAYA GUSTADO</p>
                 <p>***************************************</p>
                 <p>GRACIAS!</p>
