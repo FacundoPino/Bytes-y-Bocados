@@ -6,65 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="EstilosFiltrar.css" rel="stylesheet" />
-    <style>
-        .numero-mesa {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .filter-container {
-            margin: 20px 0;
-        }
-
-        .input-filtrar {
-            width: 100%;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .table-striped tbody tr:nth-of-type(even) {
-            background-color: #ffffff;
-        }
-
-        .error-message {
-            color: red;
-            font-weight: bold;
-        }
-
-        h3 {
-            font-size: 2em; /* Tamaño de fuente del h3 */
-            margin: 20px 0; /* Espaciado alrededor del h3 */
-            background-color: white;
-        }
-
-        h2 {
-            font-size: 2em; /* Tamaño de fuente del h2 */
-            margin: 20px 0; /* Espaciado alrededor del h2 */
-            background-color: white;
-        }
-
-
-        .Pedido-label h2 {
-            font-size: 2em; /* Tamaño de fuente del h3 */
-            margin: 20px 0; /* Espaciado alrededor del h3 */
-            background-color: transparent; /* Elimina el fondo blanco */
-            color: white; /* Color blanco del texto */
-        }
-
-        .total-label h3 {
-            font-size: 2em; /* Tamaño de fuente del h3 */
-            margin: 20px 0; /* Espaciado alrededor del h3 */
-            background-color: transparent; /* Elimina el fondo blanco */
-            color: white; /* Color blanco del texto */
-        }
-
-        h1.mb-4 {
-            color: white; /* Color blanco del texto */
-        }
-    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

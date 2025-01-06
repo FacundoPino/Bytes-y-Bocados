@@ -2,6 +2,42 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="EstiloPagos.css" rel="stylesheet" />
+    <style>
+    .recibo-button {
+        display: inline-block;
+        width: 80%;
+        padding: 14px;
+        background: linear-gradient(90deg, #34d058, #28a745);
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .recibo-button:hover {
+        background: linear-gradient(90deg, #28a745, #34d058);
+        box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .recibo-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+    }
+
+    .recibo-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+    }
+</style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="body-recibo">
@@ -41,7 +77,7 @@
         </div>
 
 
-        <asp:Button ID="btnPdf" runat="server" Text="Descargar" CssClass="recibo-button" Visible="true" OnClick="btnPdf_Click" />
+        <asp:Button ID="btnPdf" runat="server" Text="Descargar" CssClass="recibo-button" Visible="false" OnClick="btnPdf_Click" />
 
     </div>
 </asp:Content>

@@ -5,6 +5,8 @@
     font-family: 'Courier New', Courier, monospace;
     background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("https://img.freepik.com/foto-gratis/superficie-metal-rayado-estilo-grunge-oscuro_1048-12951.jpg");
     background-size: cover;
+    background-attachment: fixed;
+    color: #333;
 }
 
 .body-recibo {
@@ -12,14 +14,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Asegura que ocupe al menos el alto de la ventana */
-    padding: 20px; /* Opcional: Añade un poco de espacio alrededor */
+    min-height: 100vh;
+    padding: 20px;
 }
 
-
-
 #wrapper {
-    min-height: 100vh; /* Para que el wrapper ocupe al menos toda la pantalla visible */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -41,6 +41,8 @@
 
     .recibo-container h4 {
         margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
     }
 
 .recibo-group {
@@ -55,6 +57,8 @@
 .recibo-label {
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 16px;
+    color: #555;
 }
 
 .recibo-select,
@@ -65,21 +69,41 @@
     border-radius: 4px;
     margin-bottom: 10px;
     text-align: center;
+    font-size: 14px;
 }
 
 .recibo-button {
-    width: 80%;
+    display: inline-block;
+    width: 25%;
     padding: 10px;
-    background-color: #28a745;
-    color: #fff;
+    background: linear-gradient(90deg, #34d058, #28a745);
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
 }
 
     .recibo-button:hover {
-        background-color: #218838;
+        background: linear-gradient(90deg, #28a745, #218838);
+        box-shadow: 0 8px 20px rgba(40, 167, 69, 0.5);
+        transform: scale(1.05);
+    }
+
+    .recibo-button:active {
+        transform: scale(0.98);
+        box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2);
+    }
+
+    .recibo-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.4);
     }
 
 .recibo-back {
@@ -93,10 +117,14 @@
     font-size: 16px;
     margin-top: 10px;
     text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
     .recibo-back:hover {
         background-color: #0056b3;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
     }
 
 .receipt {
@@ -116,8 +144,12 @@
 
     .receipt h1 {
         margin-bottom: 20px;
+        font-size: 22px;
+        color: #333;
     }
 
     .receipt p {
         margin: 5px 0;
+        font-size: 14px;
+        color: #555;
     }

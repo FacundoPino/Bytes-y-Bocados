@@ -48,6 +48,8 @@ namespace tp_cuatrimestral_equipo_24
             txtConsumicion.Visible = true;
             htext.Visible = true;
             divtext.Visible = true;
+
+            btnPdf.Visible = true;
         }
 
         protected void btnPdf_Click(object sender, EventArgs e)
