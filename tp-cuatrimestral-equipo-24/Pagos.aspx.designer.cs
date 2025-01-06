@@ -114,6 +114,15 @@ namespace tp_cuatrimestral_equipo_24
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Txtfecha;
 
         /// <summary>
+        /// Control tblDetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tblDetalle;
+
+        /// <summary>
         /// Control lbltotal.
         /// </summary>
         /// <remarks>
@@ -148,24 +157,6 @@ namespace tp_cuatrimestral_equipo_24
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtTipo;
-
-        /// <summary>
-        /// Control lblconsumicion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblconsumicion;
-
-        /// <summary>
-        /// Control txtConsumicion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtConsumicion;
 
         /// <summary>
         /// Control btnPdf.
