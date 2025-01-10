@@ -1,0 +1,114 @@
+﻿.IngresarReseña {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 1px solid #000;
+    padding: 20px 30px;
+    margin-top: 30px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+    .IngresarReseña:hover {
+        background-color: #0a8c64;
+        color: #0094ff;
+    }
+
+/*Login*/
+
+#inicio {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("https://img.freepik.com/fotos-premium/cuchara-caviar-negro-rojo-sobre-fondo-madera-vista-superior-espacio-libre-texto_187166-63290.jpg?semt=ais_hybrid");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative; /* Asegura que los elementos hijos se posicionen relativos a #inicio */
+}
+
+    #inicio .presentacion {
+        color: #ffffff;
+        max-width: 1100px;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #inicio .bienvenida {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #inicio h2 {
+        font-size: 55px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+        #inicio h2 span {
+            font-size: 25px;
+            color: #0a8c64;
+        }
+
+    #inicio .descripcion {
+        max-width: 700px;
+        margin: 25px auto;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #inicio a:hover {
+        background-color: #ff5080;
+    }
+
+.Ingresar {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 1px solid #000;
+    padding: 20px 30px;
+    margin-top: 30px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+    .Ingresar:hover {
+        background-color: #0a8c64;
+        color: #fff;
+    }
+
+.contenedor-boton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#time {
+    font-size: 2rem; /* Tamaño de la fuente */
+    position: absolute;
+    top: 10px; /* Separación desde la parte superior */
+    right: 20px; /* Separación desde la parte derecha */
+    color: white; /* Color del texto */
+    font-family: 'Roboto', sans-serif; /* Tipo de fuente */
+}
+
+
+
+
+.footer {
+    color: black;
+    background-color: black;
+    font-size: 1.5rem; /* Tamaño de la fuente del título */
+    font-family: 'Roboto', sans-serif; /* Tipo de fuente */
+    padding: 0.5rem;
+    background: linear-gradient(to left, green, white); /* Línea inferior */
+    text-align: center; /* Alineación del texto */
+}

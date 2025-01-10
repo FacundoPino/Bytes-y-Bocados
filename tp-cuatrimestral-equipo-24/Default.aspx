@@ -12,11 +12,7 @@
     <form id="form1" runat="server">
 
         <section id="inicio">
-            <%--
-                <div class="contenedor-boton">
-                <asp:Button ID="txtRecupPass" runat="server" CssClass="IngresarReseña" Text="Reseña" OnClick="btnRecuperarPass_Click" />
-            </div>
-                --%>
+            
             <div class="presentacion">
                 <p class="bienvenida">Bienvenidos</p>
                 <h2>AL <span>RESTAURANTE</span>, BYTES Y BOCADOS</h2>

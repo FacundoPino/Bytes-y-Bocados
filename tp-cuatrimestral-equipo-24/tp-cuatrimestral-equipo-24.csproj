@@ -75,6 +75,7 @@
     <Content Include="Configuracion.aspx" />
     <Content Include="Delivery.aspx" />
     <Content Include="Detalle_Reseñas.aspx" />
+    <Content Include="EstiloCliente.css" />
     <Content Include="EstiloHome.css" />
     <Content Include="Estilopagos.css" />
     <Content Include="EstiloReg_Login.css" />
@@ -102,6 +103,7 @@
     <Content Include="Salon.aspx" />
     <Content Include="Soporte.aspx" />
     <Content Include="UsuarioRegistro.aspx" />
+    <Content Include="VistaCliente.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
@@ -258,6 +260,13 @@
     </Compile>
     <Compile Include="ReporteMesa.aspx.designer.cs">
       <DependentUpon>ReporteMesa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaCliente.aspx.cs">
+      <DependentUpon>VistaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaCliente.aspx.designer.cs">
+      <DependentUpon>VistaCliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

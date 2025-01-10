@@ -16,7 +16,7 @@
     </div>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Pedido para mesa <span id="numeroMesa" class="numero-mesa">
+        <h1 class="mb-4" style="color: #ffffff;">Pedido para mesa <span id="numeroMesa" class="numero-mesa">
             <asp:Label ID="numeroMesaLabel" runat="server"></asp:Label></span></h1>
 
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" CssClass="table table-striped">
@@ -32,7 +32,7 @@
         </asp:GridView>
 
         <div class="Pedido-label">
-            <h2 class="mt-5">Pedidos</h2>
+            <h2 class="mt-5" style="color: #ffffff;">Pedidos</h2>
         </div>
         <asp:GridView ID="GridViewPedidos" runat="server" CssClass="table table-striped" AutoGenerateColumns="false" OnRowCommand="GridViewPedidos_RowCommand">
             <Columns>
@@ -55,7 +55,7 @@
         </asp:GridView>
 
         <div class="total-label">
-            <h3 class="mt-5">Total:
+            <h3 class="mt-5" style="color: #ffffff;">Total:
             <asp:Label ID="TotalLabel" runat="server" Text=""></asp:Label>
             </h3>
         </div>
