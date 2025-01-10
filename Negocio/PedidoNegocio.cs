@@ -1,4 +1,5 @@
 ﻿using Dominio;
+using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -424,6 +425,60 @@ namespace Negocio
             {
                 datos.CerrarConexion();
             }
+        }
+
+        public List<ItemPedido> obtenerDetallePedido(int idPedido)
+        {
+            List<ItemPedido> lista = new List<ItemPedido>();
+
+            try
+            {
+                datos.LimpiarParametros();
+                // Usar una consulta SQL directa en lugar del procedimiento almacenado
+                datos.SetearConsulta(@"SELECT 
+                                        ip.IdInsumo, 
+                                        i.Nombre AS NombreInsumo, 
+                                        ip.Cantidad, 
+                                        ip.PrecioUnitario
+                                    FROM 
+                                        ItemPedido ip
+                                    INNER JOIN 
+                                        Pedido p ON ip.IdPedido = p.IdPedido
+                                    INNER JOIN 
+                                        Insumo i ON ip.IdInsumo = i.IdInsumo 
+                                    WHERE ip.IdPedido = @IdPedido;      
+                  ");
+                datos.SeterParametros("@IdPedido", idPedido);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    ItemPedido item = new ItemPedido
+                    {
+                        Insumo = new Insumo
+                        {
+                            IdInsumo = (int)datos.Lector["IdInsumo"],
+                            Nombre = (string)datos.Lector["NombreInsumo"],
+                            Precio = (decimal)datos.Lector["PrecioUnitario"],  // PrecioUnitario es el precio de cada unidad del ítem
+                        },
+                        Cantidad = (int)datos.Lector["Cantidad"],
+                        PrecioUnitario = (decimal)datos.Lector["PrecioUnitario"]
+                    };
+
+                    lista.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener ítems de pedido", ex);
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+            return lista;
+
         }
 
 

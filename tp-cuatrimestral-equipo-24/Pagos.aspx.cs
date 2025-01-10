@@ -8,6 +8,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 namespace tp_cuatrimestral_equipo_24
 {
@@ -20,30 +21,27 @@ namespace tp_cuatrimestral_equipo_24
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
+
             int idPedido = Convert.ToInt32(Request.QueryString["idPedido"]);
+
             PagosNegocio negocio = new PagosNegocio();
             Pago pago = negocio.ListarPorId(idPedido);
+            PedidoNegocio pro = new PedidoNegocio();
 
-            // Datos simulados de productos del pedido (deberías obtener esto de la base de datos)
-            var productos = new List<dynamic>
-            {
-                new { Producto = "Pizza", Cantidad = 2, PrecioUnitario = 10.0 },
-                new { Producto = "Refresco", Cantidad = 3, PrecioUnitario = 2.5 },
-                new { Producto = "Postre", Cantidad = 1, PrecioUnitario = 5.0 }
-            };
-
-            // Generar la tabla dinámica
+            var productos = pro.obtenerDetallePedido(idPedido);
             double total = 0;
+            
+
             foreach (var item in productos)
             {
                 tblDetalle.InnerHtml += $"<tr>" +
-                                            $"<td>{item.Producto}</td>" +
-                                            $"<td>{item.Cantidad}</td>" +
-                                            $"<td>{item.PrecioUnitario:C}</td>" +
-                                            $"<td>{item.Cantidad * item.PrecioUnitario:C}</td>" +
-                                            $"</tr>";
-                total += item.Cantidad * item.PrecioUnitario;
-            }
+                                    $"<td>{item.Insumo.Nombre}</td>" +
+                                    $"<td>{item.Cantidad}</td>" +
+                                    $"<td>{item.PrecioUnitario:C}</td>" +
+                                    $"<td>{item.Cantidad * item.PrecioUnitario:C}</td>" +
+                                $"</tr>";
+                total += (double)(item.Cantidad * item.PrecioUnitario);
+            };
 
             // Actualizar el total
             txtTotal.InnerText = total.ToString("C");
@@ -51,7 +49,7 @@ namespace tp_cuatrimestral_equipo_24
             // Asignar otros valores
             txtMesa.InnerText = pago.nroMesa.ToString();
             txtMesero.InnerText = pago.Mesero;
-            Txtfecha.InnerText = DateTime.Now.ToString("yyyy-MM-dd");
+            Txtfecha.InnerText = DateTime.Now.ToString("dd-MM-yyyy");
             txtTipo.InnerText = ddlPagos.SelectedItem.Text;
 
             // Mostrar los controles
