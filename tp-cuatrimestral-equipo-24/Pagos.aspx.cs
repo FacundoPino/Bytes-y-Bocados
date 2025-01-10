@@ -9,6 +9,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
+using System.Web;
 
 namespace tp_cuatrimestral_equipo_24
 {
@@ -73,6 +74,10 @@ namespace tp_cuatrimestral_equipo_24
         {
             try
             {
+                int idPedido = Convert.ToInt32(Request.QueryString["idPedido"]);
+                var productos = new PedidoNegocio().obtenerDetallePedido(idPedido);
+
+
                 // Crear documento PDF
                 Document document = new Document(PageSize.A4);
                 MemoryStream memoryStream = new MemoryStream();
@@ -115,23 +120,16 @@ namespace tp_cuatrimestral_equipo_24
                 table.AddCell(new PdfPCell(new Phrase("Precio Unitario", headerFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
                 table.AddCell(new PdfPCell(new Phrase("Total", headerFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
 
-                // Datos de los productos
-                var productos = new List<dynamic>
-        {
-            new { Producto = "Pizza", Cantidad = 2, PrecioUnitario = 10.0 },
-            new { Producto = "Refresco", Cantidad = 3, PrecioUnitario = 2.5 },
-            new { Producto = "Postre", Cantidad = 1, PrecioUnitario = 5.0 }
-        };
 
-                double total = 0;
+                 double total = 0;
                 foreach (var item in productos)
                 {
-                    table.AddCell(new PdfPCell(new Phrase(item.Producto, textFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
+                    table.AddCell(new PdfPCell(new Phrase(item.Insumo.Nombre, textFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
                     table.AddCell(new PdfPCell(new Phrase(item.Cantidad.ToString(), textFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
                     table.AddCell(new PdfPCell(new Phrase(item.PrecioUnitario.ToString("C"), textFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
                     table.AddCell(new PdfPCell(new Phrase((item.Cantidad * item.PrecioUnitario).ToString("C"), textFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
 
-                    total += item.Cantidad * item.PrecioUnitario;
+                    total += (double)(item.Cantidad * item.PrecioUnitario);
                 }
 
                 // Agregar la tabla al documento
@@ -162,11 +160,16 @@ namespace tp_cuatrimestral_equipo_24
                 // Cerrar documento
                 document.Close();
 
-                // Enviar el PDF al navegador
+                Response.Clear();
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("content-disposition", "attachment; filename=ReciboDePago.pdf");
+
+                // Escribir el contenido del archivo
                 Response.BinaryWrite(memoryStream.ToArray());
-                Response.End();
+
+                // Asegurar la finalización del proceso de respuesta
+                Response.Flush();
+                HttpContext.Current.ApplicationInstance.CompleteRequest();
             }
             catch (Exception ex)
             {
