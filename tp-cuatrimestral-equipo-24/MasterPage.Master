@@ -13,9 +13,15 @@
     <script src="https://kit.fontawesome.com/3b6b1498fa.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <form id="form1" runat="server">
 
 
+    <%
+        int p = Convert.ToInt32(Session["Puesto"]);
+        if (p == 1 || p == 2)
+        {
+    %>
         <div class="navegador">
             <a ID="aHome" runat="server" class="nav-brand" href="Home.aspx">[Bytes y Bocados]</a>
 
@@ -51,6 +57,10 @@
             <a class="logoNav" href="Default.aspx" title="Logout">
                 <img src="img/icoLogout.png" alt="ícono de cerrar sesión" />
             </a>
+
+    <%
+        }
+    %>
 
             <a class="time" id="time"></a>
         </div>

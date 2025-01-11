@@ -17,6 +17,11 @@ namespace tp_cuatrimestral_equipo_24
         {
             if (!IsPostBack)
             {
+                int P = Convert.ToInt32(Session["Puesto"]);
+                if (P != 2)
+                {
+                    btnAgregarInsumo.Visible = false;
+                }
                 List<Insumo> LimpiarInsumo = new List<Insumo>();
                 /*
                 InsumosNegocio insumo = new InsumosNegocio();
@@ -97,6 +102,11 @@ namespace tp_cuatrimestral_equipo_24
             idRep.DataSource = listaFiltrada;
             idRep.DataBind();
 
+        }
+
+        protected void AgregarInsumo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarInsumo.aspx");
         }
     }
 }

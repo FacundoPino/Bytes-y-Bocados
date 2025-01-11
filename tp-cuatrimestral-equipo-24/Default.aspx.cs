@@ -13,6 +13,7 @@ namespace tp_cuatrimestral_equipo_24
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Puesto"] = 0;
             //if (Session["UsuarioSeleccionado"] != null)
             //{
             //    Response.Redirect("RegistroLogin.aspx",false);

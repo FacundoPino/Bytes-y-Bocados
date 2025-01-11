@@ -19,7 +19,7 @@ namespace tp_cuatrimestral_equipo_24
             if (!IsPostBack)
             {
                 int P = Convert.ToInt32(Session["Puesto"]);
-                if(P == 1)
+                if(P != 2)
                 {
                     btnModificarInsumo.Visible = false;
                     BajaAltaLogica.Visible = false;

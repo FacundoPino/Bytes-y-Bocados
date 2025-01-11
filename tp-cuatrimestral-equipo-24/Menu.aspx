@@ -94,14 +94,26 @@
                         <div class="wrap-text_tarjeta-rest">
                             <h3><%# Eval("Nombre") %></h3>
                             <p><%# Eval("Tipo") %></p>
+                            <%int p = Convert.ToInt32(Session["Puesto"]);
+                                if (p == 2 || p == 1)
+                                {
+                            %>
                             <p>Cant. <%# Eval("Stock") %></p>
-                            <p><%# Eval("descripcion") %></p>
                             <asp:CheckBox ID="CheckBoxActivo" runat="server" Enabled="false" Text="Activo" Checked='<%# Eval("Activo") %>' />
+                            <% }
+
+%>
+                            <p><%# Eval("descripcion") %></p>
                             <h3>$ <%# Eval("Precio") %></h3>
 
+                            <% if (p == 2 || p == 1)
+                                { %>
                             <div class="cta_tarjeta-rest">
                                 <a href='<%# "DetalleInsumo.aspx?IdInsumo=" + Eval("IdInsumo") %>'>Detalles</a>
                             </div>
+                            <%
+                                }
+                            %>
 
                         </div>
                     </div>
@@ -112,7 +124,7 @@
     </section>
 
     <div class="btn-container">
-        <a href="AgregarInsumo.aspx" class="btn-custom">AGREGAR INSUMO</a>
+        <asp:Button ID="btnAgregarInsumo" runat="server" Text="AGREGAR INSUMO" class="btn-custom" OnClick="AgregarInsumo_Click" ></asp:Button>
     </div>
 
 
