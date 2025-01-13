@@ -88,6 +88,7 @@
     <Content Include="EstilosSoporte.css" />
     <Content Include="EstilosTarjetas.css" />
     <Content Include="Estilo_Error.css" />
+    <Content Include="Generador_QR.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="JS\ScriptsSalon.js" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="Detalle_Reseñas.aspx.designer.cs">
       <DependentUpon>Detalle_Reseñas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Generador_QR.aspx.cs">
+      <DependentUpon>Generador_QR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Generador_QR.aspx.designer.cs">
+      <DependentUpon>Generador_QR.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
