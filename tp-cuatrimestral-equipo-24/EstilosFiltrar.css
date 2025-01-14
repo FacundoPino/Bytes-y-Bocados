@@ -11,9 +11,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 45px 0 40px;
-    /*margin-bottom: 40px;*/
-    gap: 10px
+    flex-wrap: wrap; /* Permite que los elementos bajen si hay menos espacio */
+    margin: 20px 0;
+    gap: 15px; /* Espaciado entre los elementos */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 .label-filtrar {
@@ -48,11 +52,15 @@
 
 .form-select {
     padding: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #fff;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     box-sizing: border-box;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
+    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+    background-color: #f7f7f7; /* Fondo más claro al interactuar */
 }
 
     .form-select:focus {
@@ -60,4 +68,14 @@
         border-color: #007bff;
     }
 
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column; /* Los elementos se apilan verticalmente */
+        gap: 20px; /* Mayor espacio entre los elementos */
+    }
+
+    .input-filtrar {
+        width: 100%; /* El ancho ocupa todo el espacio disponible */
+    }
+}
 
