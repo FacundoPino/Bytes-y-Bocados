@@ -18,7 +18,7 @@
 
         setInterval(updateTime, 1000); // Actualiza la hora cada segundo
         document.addEventListener('DOMContentLoaded', updateTime); // Llama a la función para que muestre la hora inmediatamente al cargar la página
-</script>
+    </script>
 
     <style>
         body, html {
@@ -106,19 +106,38 @@
         .btn-enviar {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 8px 15px;
             background-color: #4CAF50;
             color: #ffffff;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: background-color 0.3s;
         }
 
             .btn-enviar:hover {
                 background-color: #45a049;
             }
+
+        .btn-volver {
+            display: inline-block; /* Estilo de botón */
+            padding: 8px 15px; /* Espaciado interno */
+            background-color: #f44336; /* Color de fondo */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 8px; /* Bordes redondeados */
+            font-size: 14px; /* Tamaño del texto */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            text-align: center; /* Centra el texto */
+            transition: background-color 0.3s; /* Efecto de transición */
+            margin-top: 10px; /* Separación superior */
+        }
+
+            .btn-volver:hover {
+                background-color: #d32f2f; /* Color más oscuro al pasar el mouse */
+            }
+
 
         .footer {
             color: black;
@@ -165,8 +184,8 @@
                 </div>
 
                 <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" CssClass="btn-enviar" OnClick="BtnEnviar_Click" />
-            </form>
                 <asp:Button ID="btnvolver" runat="server" Text="Volver" CssClass="btn-volver" PostBackUrl="~/VistaCliente.aspx" />
+            </form>
         </div>
     </section>
     <footer>
