@@ -22,6 +22,7 @@ namespace tp_cuatrimestral_equipo_24
                 {
                     btnAgregarInsumo.Visible = false;
                 }
+                
                 List<Insumo> LimpiarInsumo = new List<Insumo>();
                 /*
                 InsumosNegocio insumo = new InsumosNegocio();
