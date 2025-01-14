@@ -62,15 +62,19 @@ namespace tp_cuatrimestral_equipo_24
 
                 ClientesGestion Client = new ClientesGestion();
                 Client.InsertarReseña(Nuevareseña);
+               
 
-                Response.Write("<script>alert('Reseña enviada correctamente.');</script>");
-                
                 TxtNombre.Text = "";
                 TxtEmail.Text = "";
                 txtmensaje.Text = "";
                 txtpuntaje.Text = "";
-                Response.Redirect("Home.aspx");
 
+                // Muestra el mensaje de éxito y luego redirige
+                ClientScript.RegisterStartupScript(this.GetType(), "alertRedirect", "alert('Reseña enviada.'); window.location='Soporte.aspx';", true);
+                /*
+                Response.Write("<script>alert('Reseña enviada.');</script>");
+                Response.Redirect("VistaCliente.aspx");
+                */
             }
             catch (Exception ex)
             {
