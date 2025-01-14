@@ -166,6 +166,7 @@
 
                 <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" CssClass="btn-enviar" OnClick="BtnEnviar_Click" />
             </form>
+                <asp:Button ID="btnvolver" runat="server" Text="Volver" CssClass="btn-volver" PostBackUrl="~/VistaCliente.aspx" />
         </div>
     </section>
     <footer>
